@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>溪洲國小校安巡邏系統</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <!-- PWA 設定 -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0a192f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <style>
+    body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #0a192f; }
+    iframe { border: none; width: 100%; height: 100%; display: block; }
+  </style>
+</head>
+<body>
+  <!-- 這裡是用 iframe 載入你的 App -->
+  <iframe src="https://script.google.com/macros/s/AKfycbxgE9zS2XmFOgfoRP70q5pQ4gfYB0K98GjuCL8a-U1B2ENzT3UshNbWD5g15xpkKVLn/exec"></iframe>
+
+  <script>
+    // 註冊 Service Worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('SW registered!', reg))
+        .catch(err => console.log('SW failed', err));
+    }
+  </script>
+</body>
+</html>
